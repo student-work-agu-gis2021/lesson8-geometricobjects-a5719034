@@ -39,7 +39,8 @@ def create_line_geom(points):
 
 line1 = None
 # YOUR CODE HERE 3 to define two points and store the result in line1
-
+points = [(45.2,22.34),(100.22,-3.20),(70.0,10.20)]
+line1 = create_line_geom(points)
 
 # CODE FOR TESTING YOUR SOLUTION
 print(line1)
@@ -70,11 +71,18 @@ except Exception as e:
 
 
 # YOUR CODE HERE 4 to define create_poly_geom()
-
+def create_poly_geom(coords):
+  assert type(coords)==list,"Input should be a list!"
+  assert len(coords) >=3, "Polygon object requires at least three Points!"
+  assert type(points[0])==tuple,"All list values should be Shapely Point objects!"
+  poly = Polygon(coords)
+  return poly
 # Demonstrate the usage of the function. For example, create a Polygon with three points: `(45.2, 22.34)`, `(100.22, -3.20)` & `(70.0, 10.20)`.
 
 # YOUR CODE HERE 5 to define poly1 with three points
-poly1 = 
+points2 = [(45.2,22.34),(100.22,-3.20),(70.0,10.20)] 
+poly1 = create_poly_geom(points2)
+
 
 # CODE FOR TESTING YOUR SOLUTION
 print(poly1)
@@ -105,12 +113,15 @@ except Exception as e:
 # 
 
 #  YOUR CODE HERE 6 to define get_centroid()
-
+def get_centroid(geom):
+  assert type(geom)==Point or type(geom)==LineString or type(geom)==Polygon,"Input should be a Shapely geometry!"
+  return geom.centroid
 # Test and demonstrate the usage of the function. You can, for example, create shapely objects using the functions you created in problem 1 and print out information about their centroids:
 # 
 
 #  YOUR CODE HERE 7 to define some objects
-
+points3=[(55.2,20.19),(140.12,-3.20),(30.0,-19.20)]
+poly1=create_poly_geom(points3)
 
 # CODE FOR TESTING YOUR SOLUTION
 centroid = get_centroid(poly1)
