@@ -160,6 +160,7 @@ print("Total length of all lines is", round(total_length, 2))
 
 # YOUR CODE HERE 8 to define create_od_lines() and calculate_total_distance()
 
+
 def create_od_lines(point1,point2):
   od_lines=[]
   for orig,dest in zip(point1,point2):
